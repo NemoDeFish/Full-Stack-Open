@@ -1,0 +1,50 @@
+### Localhost
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Liisa Marttinen", 
+    "number": "040-243563"
+}
+
+### Missing name
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "number": "040-243563"
+}
+
+### Missing number
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Liisa Marttinen"
+}
+
+### Name already exists
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Neil Armstrong", 
+    "number": "040-243563"
+}
+
+### Fly.io
+POST https://late-cloud-9602.fly.dev/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Liisa Marttinen", 
+    "number": "040-243563"
+}
+
+### Missing name
+POST https://late-cloud-9602.fly.dev/api/persons/
+Content-Type: application/json
+
+{
+    "number": "040-243563"
+}

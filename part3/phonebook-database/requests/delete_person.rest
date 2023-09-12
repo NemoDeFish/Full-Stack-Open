@@ -1,0 +1,5 @@
+### Localhost
+DELETE http://localhost:3001/api/persons/64f576e1be1c6b2117e9a872
+
+### Fly.io
+DELETE https://late-cloud-9602.fly.dev/api/persons/3
