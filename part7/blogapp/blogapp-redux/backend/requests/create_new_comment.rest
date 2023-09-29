@@ -1,0 +1,6 @@
+POST http://localhost:3003/api/blogs/6505f88b10a512c51c751513/comments
+Content-Type: application/json
+
+{
+  "comment": "a must read for every developer"
+}
