@@ -1,4 +1,5 @@
 import express from "express";
+// Should import from "./utils" so the entire file is not run
 import { parseArguments, calculateBmi } from "./bmiCalculator";
 import { calculateExercises } from "./exerciseCalculator";
 import { isNotNumber } from "./utils";
@@ -11,6 +12,8 @@ app.get("/hello", (_req, res) => {
 });
 
 app.get("/bmi", (req, res) => {
+  // Can use if statements to check type instead of try-catch
+  // Build separate checking instead of using function 'parseArguments'
   try {
     const { height, mass } = parseArguments([
       "",
@@ -40,10 +43,14 @@ app.post("/exercises", (req, res) => {
   }
 
   const dailyHrs: number[] = [];
+  // Alternatively, use for (const day of dailyExercises)
   for (let i = 0; i < dailyExercises.length; i++) {
+    // Can check targetHrs separately first
     if (!isNotNumber(dailyExercises[i]) && !isNotNumber(targetHrs)) {
       dailyHrs.push(Number(dailyExercises[i]));
     } else {
+      // Only perform if statement to check
+      // Once the checks are finished, the values can be mapped
       return res.status(400).send({ error: "malformatted parameters" });
     }
   }

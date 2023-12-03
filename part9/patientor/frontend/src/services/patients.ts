@@ -22,6 +22,7 @@ const create = async (object: PatientFormValues) => {
 };
 
 const addEntry = async (id: string, object: EntryWithoutId) => {
+  // Solution returns <Patient> instead of <Entry>
   const { data } = await axios.post<Entry>(
     `${apiBaseUrl}/patients/${id}/entries`,
     object

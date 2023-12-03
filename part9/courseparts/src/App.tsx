@@ -53,6 +53,7 @@ const App = () => {
     },
   ];
 
+  // The reduction can be done inside <Total /> component instead
   const totalExercises = courseParts.reduce(
     (sum, part) => sum + part.exerciseCount,
     0
@@ -61,6 +62,8 @@ const App = () => {
   return (
     <div>
       <Header name={courseName} />
+      {/* <Content /> and <Total /> can both share 
+      the same props `parts={courseParts}`*/}
       <Content parts={courseParts} />
       <Total exercises={totalExercises} />
     </div>

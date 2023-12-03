@@ -24,6 +24,7 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  // this can be done using a new function `patientService.getOne(id)`
   res.send(
     patientsService
       .getAllPatients()
@@ -35,6 +36,7 @@ router.post("/:id/entries", (req, res) => {
   try {
     const newEntry = toNewEntry(req.body);
 
+    // Solution returns patient instead of entry alone
     const addedEntry = patientsService.addEntry(req.params.id, newEntry);
     res.json(addedEntry);
   } catch (error: unknown) {

@@ -30,11 +30,18 @@ interface HealthCheckEntry extends BaseEntry {
   healthCheckRating: HealthCheckRating;
 }
 
+// Instead of delcaring a separate 'DischargeEntry',
+// immediately declare it inside 'HospitalEntry'
 export interface DischargeEntry {
   date: string;
   criteria: string;
 }
 
+// Discharge is optional field
+// discharge?: {
+//   date: string;
+//   criteria: string;
+// }
 interface HospitalEntry extends BaseEntry {
   type: "Hospital";
   discharge: DischargeEntry;

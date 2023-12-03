@@ -16,8 +16,11 @@ const App = () => {
   const [diagnoses, setDiagnoses] = useState<Diagnosis[]>([]);
 
   useEffect(() => {
+    // This is refactored into "./util" as 'pingBackend()'
     void axios.get<void>(`${apiBaseUrl}/ping`);
 
+    // Combine functions below into one single function to run:
+    // void fetchInitialData();
     const fetchPatientList = async () => {
       const patients = await patientService.getAll();
       setPatients(patients);

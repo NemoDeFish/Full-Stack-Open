@@ -56,6 +56,8 @@ export type Entry =
   | OccupationalHealthcareEntry
   | HealthCheckEntry;
 
+// entries here should be optional, since some patients do not have entries
+// Solution does not make it optional in the backend?
 export interface Patient {
   id: string;
   name: string;
